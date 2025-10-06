@@ -1,0 +1,247 @@
+/* Variables pour un thème sombre facile à changer */
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef; /* Couleur d'accentuation (Cyan) */
+}
+
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Assurez-vous d'importer une police comme Poppins */
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Header et Navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Style du bouton de thème (Soleil/Lune) */
+#theme-icon {
+    font-size: 1.8rem;
+    color: var(--main-color);
+    cursor: pointer;
+    margin-left: 2rem;
+    transition: 0.3s;
+}
+
+#theme-icon:hover {
+    opacity: 0.8;
+}
+
+
+.logo {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li a {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 3rem;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+    color: var(--main-color);
+}
+
+/* Section d'Accueil (Home) */
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 9%;
+    padding-top: 100px; /* Espace pour le header fixe */
+}
+
+.home-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 2rem;
+}
+
+.home-content h3 span {
+    color: var(--main-color);
+}
+
+.home-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content p {
+    font-size: 1rem;
+    max-width: 800px;
+}
+
+/* Bouton (Utilise la classe Bootstrap .btn) */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 0.4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1rem;
+    color: var(--second-bg-color);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.5s ease;
+    text-decoration: none; /* S'assurer qu'il n'y a pas de soulignement */
+}
+
+.btn:hover {
+    box-shadow: none;
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+/* Section Réseaux Sociaux */
+.reseaux {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+}
+
+.reseaux .carte {
+    width: 40px;
+    height: 40px;
+    background: var(--second-bg-color);
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 0.5rem var(--main-color);
+}
+
+.reseaux .carte:hover {
+    background: var(--main-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.reseaux .carte a i {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    transition: 0.5s;
+}
+
+.reseaux .carte:hover a i {
+    color: var(--bg-color);
+}
+
+/* Section Portfolio/Projets */
+.portfolio-section {
+    background: var(--second-bg-color);
+}
+
+.portfolio-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--main-color);
+    margin-bottom: 3rem;
+}
+
+.portfolio-section .card {
+    background: var(--bg-color);
+    border: 1px solid var(--main-color);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.portfolio-section .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-section .card-title {
+    color: var(--main-color);
+}
+
+.portfolio-section .card-text {
+    color: #ccc;
+}
+/* ==================== THEME LIGHT (Mode Jour) ==================== */
+.light-theme {
+    /* Couleurs Claires */
+    --bg-color: #f6f6f6; /* Fond très clair */
+    --second-bg-color: #e5e5e5; /* Fond de section plus clair */
+    --text-color: #1f242d; /* Texte sombre */
+    --main-color: #ff5722; /* Nouvelle couleur d'accentuation (Orange) */
+}
+
+/* Ajustements visuels pour le thème clair */
+.light-theme .navbar ul li a:hover,
+.light-theme .navbar ul li a.active {
+    color: var(--main-color);
+}
+
+.light-theme .logo {
+    color: var(--text-color);
+}
+
+/* Bouton et cartes */
+.light-theme .btn {
+    background: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 1rem rgba(255, 87, 34, 0.5); /* Ombre pour l'orange */
+}
+
+.light-theme .portfolio-section .card {
+    background: var(--bg-color);
+    border: 1px solid var(--main-color);
+}
+
+/* Couleurs des icônes sociales */
+.light-theme .reseaux .carte {
+    background: var(--second-bg-color);
+    box-shadow: 0 0 0.5rem var(--text-color);
+}
+
+.light-theme .reseaux .carte:hover {
+    background: var(--main-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.light-theme .reseaux .carte a i {
+    color: var(--text-color);
+}
+
+.light-theme .reseaux .carte:hover a i {
+    color: var(--bg-color);
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="style2.css">
+        <title>KAMGO NATHAN | Portfolio Développeur Front-end</title>
+    </head>
+    <body>
+        
+        <header>
+            <h1 class="logo">K.N. Portfolio</h1>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                 <i class='bx bx-sun' id="theme-icon"></i>
+            </nav>
+        </header>
+
+        <section class="home" id="home">
+            <div class="home-content">
+                <h3>Hello, It's me</h3>
+                <h1>KAMGO NATHAN</h1>
+                <h3>And I'm a <span></span></h3>
+                <p>Passionné par la création d'expériences web **accessibles** et **performantes**. Je transforme les maquettes en interfaces utilisateur fluides et responsives, en mettant l'accent sur la qualité du code et l'expérience utilisateur.</p>
+                <a href="#portfolio" class="btn btn-primary mt-3">View My Work</a>
+            </div>
+            </section>
+
+        <section class="about py-5" id="about">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 mb-4 mb-lg-0 text-center">
+                        <i class='bx bxs-user-detail' style="font-size: 8rem; color: var(--main-color);"></i>
+                    </div>
+                    <div class="col-lg-7">
+                        <h2 class="section-title mb-4">About **Me**</h2>
+                        <h3 class="mb-3">Front-end Developer | Problem Solver</h3>
+                        <p>Je suis **KAMGO NATHAN**, développeur Front-end avec X années d'expérience, spécialisé dans **React, Vue.js, et Sass**. Mon approche est axée sur la performance et l'optimisation pour le SEO. J'ai mené des projets de refonte complète de sites e-commerce et développé des applications single-page (SPA) complexes.</p>
+                        <p>Ma mission est de construire le pont entre le design et la technique, en garantissant que chaque utilisateur ait une interaction positive et sans friction.</p>
+                        <a href="CV-KAMGO-NATHAN.pdf" class="btn btn-primary mt-3" download>Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services py-5" id="services">
+            <div class="container">
+                <h2 class="text-center mb-5">My **Services**</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 p-4 text-center">
+                            <i class='bx bx-code-alt card-icon'></i>
+                            <h5 class="card-title mt-3">Développement Front-end</h5>
+                            <p class="card-text">Construction d'interfaces utilisateur (UI) modernes et responsives avec des frameworks comme React, Next.js ou Vue.js.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 p-4 text-center">
+                            <i class='bx bx-mobile card-icon'></i>
+                            <h5 class="card-title mt-3">Optimisation Responsive & Mobile</h5>
+                            <p class="card-text">Assurer une compatibilité et une expérience parfaites sur tous les appareils : ordinateurs, tablettes et smartphones.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 p-4 text-center">
+                            <i class='bx bx-tachometer card-icon'></i>
+                            <h5 class="card-title mt-3">Performance & Accessibilité</h5>
+                            <p class="card-text">Audit et amélioration des Core Web Vitals (vitesse de chargement) et respect des normes WCAG pour l'accessibilité.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio-section py-5">
+            <div class="container">
+                <h2 class="mb-4">My **Projects**</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img src="https://via.placeholder.com/350x200?text=Projet+E-Commerce" class="card-img-top" alt="Project 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Project One (E-Commerce)</h5>
+                                <p class="card-text">Refonte complète d'une boutique en ligne avec React, améliorant la conversion de 30%.</p>
+                                <a href="#" class="btn btn-outline-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img src="https://via.placeholder.com/350x200?text=Application+SPA" class="card-img-top" alt="Project 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Project Two (Application SPA)</h5>
+                                <p class="card-text">Développement d'un tableau de bord analytique en Vue.js avec intégration d'API REST.</p>
+                                <a href="#" class="btn btn-outline-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img src="https://via.placeholder.com/350x200?text=Site+Vitrine" class="card-img-top" alt="Project 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Project Three (Landing Page)</h5>
+                                <p class="card-text">Création d'une landing page haute performance pour une campagne marketing, optimisée SEO.</p>
+                                <a href="#" class="btn btn-outline-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact py-5" id="contact">
+            <div class="container">
+                <h2 class="text-center mb-5">Contact **Me**</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <form action="#" method="POST" class="bg-dark p-5 rounded shadow">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nom Complet</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Adresse Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Sujet</label>
+                                <input type="text" class="form-control" id="subject">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="reseaux">
+            <div class="carte">  
+                <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+            </div>
+            <div class="carte">
+                <a href="#"><i class='bx bxl-github'></i></a>
+            </div>
+            <div class="carte">
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+            </div>
+        </div>
+
+        <footer class="footer bg-dark text-white text-center py-3 mt-5">
+            <div class="container">
+                <p class="mb-0">&copy; 2025 KAMGO NATHAN. All rights reserved. Built with ❤️</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
