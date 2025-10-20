@@ -43,40 +43,73 @@ document.addEventListener('DOMContentLoaded', function() {
     // Démarre l'effet après un petit délai
     setTimeout(type, 1000);
 });
-/**
- * Gestion du Thème Clair/Sombre
- */
-document.addEventListener('DOMContentLoaded', function() {
-    const themeIcon = document.getElementById('theme-icon');
-    const body = document.body;
-    
-    // 1. Vérifier la préférence stockée (au chargement)
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-        body.classList.add('light-theme');
-        themeIcon.classList.remove('bx-sun');
-        themeIcon.classList.add('bx-moon');
+
+// ===================================
+// 1. THEME TOGGLE LOGIC
+// ===================================
+
+const themeIcon = document.querySelector('#theme-icon');
+const body = document.body;
+// Get saved theme preference ('light' or 'dark')
+const userTheme = localStorage.getItem('theme'); 
+
+// Initial Load: Apply saved theme from localStorage or default to dark
+// If the saved theme is 'light', apply the light theme class and switch the icon.
+if (userTheme === 'light') {
+    body.classList.add('light-theme');
+    if (themeIcon) { // Check if the themeIcon element exists
+        themeIcon.classList.remove('bx-moon');
+        themeIcon.classList.add('bx-sun');
     }
+}
 
-    // 2. Écouteur d'événement sur le bouton
+// Toggle Functionality on Click
+if (themeIcon) { // Ensure the icon exists before adding the listener
     themeIcon.onclick = () => {
-        // Basculer la classe sur le <body>
-        body.classList.toggle('light-theme');
-
-        // Mettre à jour l'icône et sauvegarder la préférence
-        if (body.classList.contains('light-theme')) {
-            // Passer au thème clair -> afficher l'icône Lune pour basculer vers le sombre
-            themeIcon.classList.remove('bx-sun');
-            themeIcon.classList.add('bx-moon');
+        // Check if the current theme is dark (absence of 'light-theme' class)
+        if (!body.classList.contains('light-theme')) {
+            // Switch to Light Theme
+            body.classList.add('light-theme');
             localStorage.setItem('theme', 'light');
-        } else {
-            // Passer au thème sombre -> afficher l'icône Soleil pour basculer vers le clair
+            // Change icon to Sun
             themeIcon.classList.remove('bx-moon');
             themeIcon.classList.add('bx-sun');
+        } else {
+            // Switch to Dark Theme
+            body.classList.remove('light-theme');
             localStorage.setItem('theme', 'dark');
+            // Change icon back to Moon
+            themeIcon.classList.remove('bx-sun');
+            themeIcon.classList.add('bx-moon');
         }
     };
+}
 
-    // (La fonction 'type' de l'effet de frappe JavaScript suit ici)
-    // ...
-});
+
+// ===================================
+// 2. MENU TOGGLE LOGIC
+// ===================================
+
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+// Toggle the navbar and menu icon on click
+if (menuIcon && navbar) {
+    menuIcon.onclick = () => {
+        // Toggle the 'bx-x' icon class for the animation effect
+        menuIcon.classList.toggle('bx-x'); 
+        // Toggle the 'active' class to show/hide the menu
+        navbar.classList.toggle('active'); 
+    };
+    
+    // Automatically close the mobile menu after clicking a link
+    let navLinks = document.querySelectorAll('.navbar a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            // Remove the active classes to close the menu on mobile
+            menuIcon.classList.remove('bx-x');
+            navbar.classList.remove('active');
+        });
+    });
+}

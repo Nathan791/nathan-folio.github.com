@@ -1,0 +1,308 @@
+/* ========================================================
+   1. Theme Variables & Global Resets
+   ======================================================== */
+
+/* Default: Dark Theme Variables */
+:root {
+    --bg-color: #1f242d; /* Primary Dark Background */
+    --second-bg-color: #323946; /* Secondary Dark for sections/cards */
+    --text-color: #fff; /* White Text */
+    --main-color: #00eeff; /* Vibrant Cyan/Teal Accent */
+    --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Light Theme Variables (Applied when .light-theme class is added to <body>) */
+.light-theme {
+    --bg-color: #f0f2f5; /* Light Background */
+    --second-bg-color: #ffffff; /* White for sections/cards */
+    --text-color: #1f242d; /* Dark Text */
+    --main-color: #2e62ff; /* A deep blue accent for contrast */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Global Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s; /* Smooth theme transition */
+}
+
+/* Ensure sections take up space and help with fixed header scrolling */
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+    scroll-margin-top: 5rem;
+}
+
+/* Ensure text colors switch with the theme */
+h1, h2, h3, h5, p, label {
+    color: var(--text-color);
+}
+
+.section-title, h2 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.section-title strong, h2 strong {
+    color: var(--main-color);
+}
+
+/* ========================================================
+   2. Header & Navigation (Desktop Default)
+   ======================================================== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 0.5rem 1rem var(--shadow-color);
+    transition: background-color 0.3s;
+}
+
+.logo {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-weight: 700;
+    order: 1; /* Desktop position (far left) */
+}
+
+/* Theme Toggle Icon (Desktop position) */
+#theme-icon {
+    font-size: 2.2rem;
+    cursor: pointer;
+    margin-right: 1.5rem; 
+    color: var(--main-color);
+    order: 2; /* Position it next to the menu icon/navbar on desktop */
+    transition: 0.3s ease;
+}
+
+#theme-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Menu Icon (Hidden on Desktop) */
+#menu-icon {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none; /* Hide on large screens by default */
+    order: 3;
+}
+
+/* Desktop Navbar */
+.navbar ul {
+    display: flex;
+    gap: 2.5rem;
+    margin: 0;
+}
+
+.navbar a {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+/* ========================================================
+   3. Section & Component Styling
+   ======================================================== */
+
+/* Home Section */
+.home {
+    display: flex;
+    align-items: center;
+}
+
+.home-content h3 span {
+    color: var(--main-color);
+}
+
+/* About Section */
+.about .col-lg-5 i {
+    color: var(--main-color) !important;
+}
+
+/* Services & Portfolio Cards */
+.services .card, .portfolio-section .card {
+    background: var(--second-bg-color);
+    border: 0.1rem solid var(--second-bg-color);
+    box-shadow: 0 0 1rem var(--shadow-color);
+    transition: 0.5s ease;
+}
+
+.services .card:hover {
+    box-shadow: 0 0 1.5rem var(--main-color);
+    transform: scale(1.02);
+}
+
+.services .card-icon {
+    font-size: 5rem;
+    color: var(--main-color);
+}
+
+/* Contact Form */
+.contact form {
+    background-color: var(--second-bg-color) !important;
+    border: 0.1rem solid var(--main-color);
+}
+
+.contact .form-control {
+    background-color: var(--bg-color);
+    border: 0.1rem solid var(--second-bg-color);
+    color: var(--text-color);
+}
+
+/* Button Styling (Bootstrap Theme Override) */
+.btn-primary {
+    background-color: var(--main-color) !important;
+    border-color: var(--main-color) !important;
+    color: var(--bg-color) !important;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+    filter: brightness(0.9);
+}
+
+.btn-outline-primary {
+    color: var(--main-color) !important;
+    border-color: var(--main-color) !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--main-color) !important;
+    color: var(--bg-color) !important;
+    box-shadow: 0 0 0.5rem var(--main-color);
+}
+
+/* Social Icons (Reseaux) */
+.reseaux {
+    position: fixed;
+    bottom: 20%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+}
+
+.reseaux .carte {
+    padding: 0.75rem 0.75rem 0.75rem 1.25rem;
+    background: var(--second-bg-color);
+    margin-bottom: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border: 1px solid var(--main-color);
+    transition: all 0.3s ease;
+}
+
+.reseaux .carte:hover {
+    background: var(--main-color);
+}
+
+.reseaux i {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    transition: all 0.3s ease;
+}
+
+.reseaux .carte:hover i {
+    color: var(--bg-color);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--second-bg-color) !important; /* Use second-bg for a subtle difference */
+    transition: background-color 0.3s;
+}
+
+/* ========================================================
+   4. Media Query (Mobile/Tablet Navigation)
+   ======================================================== */
+
+@media (max-width: 992px) {
+    /* Header padding adjustment */
+    header {
+        padding: 1.5rem 4%;
+    }
+
+    /* Set up icon and logo positions for mobile: Theme (Left) | Logo (Center) | Menu (Right) */
+    header {
+        justify-content: space-between; 
+    }
+    
+    #theme-icon {
+        display: block;
+        order: 1; /* Far left position */
+    }
+
+    .logo {
+        order: 2; /* Center position */
+        flex-grow: 1; 
+        text-align: center;
+    }
+
+    #menu-icon {
+        display: block;
+        order: 3; /* Far right position */
+    }
+
+    /* Navbar positioning and style for mobile (initially hidden) */
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--second-bg-color);
+        border-top: 0.1rem solid var(--main-color);
+        box-shadow: 0 0.5rem 1rem var(--shadow-color);
+        
+        /* Hiding/Transition properties */
+        transform: translateY(-300px); 
+        opacity: 0;
+        transition: transform 0.4s ease, opacity 0.4s ease;
+        pointer-events: none; /* Prevent clicks when hidden */
+    }
+
+    /* Active state is toggled by JavaScript */
+    .navbar.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Stack links vertically */
+        align-items: flex-start; /* Align links to the left inside the dropdown */
+        text-align: left;
+        padding-bottom: 1rem;
+    }
+
+    .navbar li {
+        margin: 1rem 0;
+    }
+}
